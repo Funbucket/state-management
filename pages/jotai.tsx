@@ -1,10 +1,10 @@
-import Bar from "@/components/Zotai/Bar";
-import BarSelect from "@/components/Zotai/Select/BarSelect";
-import Foo from "@/components/Zotai/Foo";
-import FooSelect from "@/components/Zotai/Select/FooSelect";
+import Bar from "@/components/Jotai/Bar";
+import BarSelect from "@/components/Jotai/Select/BarSelect";
+import Foo from "@/components/Jotai/Foo";
+import FooSelect from "@/components/Jotai/Select/FooSelect";
 import { HStack, VStack } from "@chakra-ui/react";
-import BarFocus from "@/components/Zotai/focus/BarFocus";
-import FooFocus from "@/components/Zotai/focus/FooFocus";
+import BarFocus from "@/components/Jotai/focus/BarFocus";
+import FooFocus from "@/components/Jotai/focus/FooFocus";
 
 const Jotai = () => {
   return (
