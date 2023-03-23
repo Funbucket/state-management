@@ -16,7 +16,7 @@ const FooFocus = () => {
       <VStack border="2px" padding="2" gap={3}>
         <Heading size="lg">이것은 Foo컴포넌트입니다.</Heading>
         <Heading size="md">foo: {foo}</Heading>
-        <Button onClick={() => increaseFoo("P")}>changeBar</Button>
+        <Button onClick={() => increaseFoo("P")}>changeFoo</Button>
         <Text>{renderCount}번 렌더링되었습니다.</Text>
       </VStack>
     </HStack>
