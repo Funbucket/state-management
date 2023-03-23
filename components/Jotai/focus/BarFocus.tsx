@@ -14,7 +14,7 @@ const BarFocus = () => {
   return (
     <HStack>
       <VStack border="2px" padding="2" gap={3}>
-        <Heading size="lg">이것은 Bar컴포넌트입니다.</Heading>
+        <Heading size="lg">이것은 BarFocus컴포넌트입니다.</Heading>
         <Heading size="md">bar: {bar}</Heading>
         <Button onClick={() => increaseBar(100)}>changeBar</Button>
         <Text>{renderCount}번 렌더링되었습니다.</Text>
