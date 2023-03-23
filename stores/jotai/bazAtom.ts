@@ -11,6 +11,8 @@ const initialState: InitialStateType = {
   bar: 1483,
 };
 
+// cosnt bazAtom = atom<InitialStateType>(initialState);
+
 // useResetAtom 사용하기 위해서 atomWithReset 사용
 const bazAtom = atomWithReset<InitialStateType>(initialState);
 

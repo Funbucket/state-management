@@ -1,4 +1,4 @@
-import { useBazReset, useBazValue, useBazSetter } from "@/stores/jotai/bazAtom";
+import { useBazReset, useBazValue, useBazSetter, useBazState } from "@/stores/jotai/bazAtom";
 import { Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { useEffect } from "react";
 
@@ -8,6 +8,7 @@ const Bar = () => {
     renderCount++;
   });
 
+  // const  [baz, setBaz] = useBazState();
   const { bar, foo } = useBazValue();
   const setBaz = useBazSetter();
   const resetBaz = useBazReset();
