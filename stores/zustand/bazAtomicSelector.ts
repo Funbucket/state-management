@@ -20,39 +20,39 @@ interface ActionType {
 }
 
 // CASE 1: without persist
-// const useBazStore = create<InitialStateType & ActionType>((set) => ({
-//   ...initialState,
-//   actions: {
-//     increaseFoo: (value) => set((state) => ({ foo: (state.foo += value) })),
-//     increaseBar: (value) => set((state) => ({ bar: (state.bar += value) })),
-//     initialize: () => set({ ...initialState }),
-//   },
-// }));
+const useBazStore = create<InitialStateType & ActionType>((set) => ({
+  ...initialState,
+  actions: {
+    increaseFoo: (value) => set((state) => ({ foo: (state.foo += value) })),
+    increaseBar: (value) => set((state) => ({ bar: (state.bar += value) })),
+    initialize: () => set({ ...initialState }),
+  },
+}));
 
 // CASE 2: persist
-type PersistType = (
-  config: StateCreator<InitialStateType & ActionType>,
-  option: PersistOptions<Pick<InitialStateType, "bar">>
-) => StateCreator<InitialStateType & ActionType>;
+// type PersistType = (
+//   config: StateCreator<InitialStateType & ActionType>,
+//   option: PersistOptions<Pick<InitialStateType, "bar">>
+// ) => StateCreator<InitialStateType & ActionType>;
 
-const useBazStore = create<InitialStateType & ActionType>(
-  (persist as PersistType)(
-    (set) => ({
-      ...initialState,
-      actions: {
-        increaseFoo: (value) => set((state) => ({ foo: (state.foo += value) })),
-        increaseBar: (value) => set((state) => ({ bar: (state.bar += value) })),
-        initialize: () => set({ ...initialState }),
-      },
-    }),
-    {
-      name: "bar-storage",
-      // bar만 storage에 저장하기 위함
-      partialize: (state) => ({ bar: state.bar }),
-      storage: createJSONStorage(() => sessionStorage),
-    }
-  )
-);
+// const useBazStore = create<InitialStateType & ActionType>(
+//   (persist as PersistType)(
+//     (set) => ({
+//       ...initialState,
+//       actions: {
+//         increaseFoo: (value) => set((state) => ({ foo: (state.foo += value) })),
+//         increaseBar: (value) => set((state) => ({ bar: (state.bar += value) })),
+//         initialize: () => set({ ...initialState }),
+//       },
+//     }),
+//     {
+//       name: "bar-storage",
+//       // bar만 storage에 저장하기 위함
+//       partialize: (state) => ({ bar: state.bar }),
+//       storage: createJSONStorage(() => sessionStorage),
+//     }
+//   )
+// );
 
 export const useFoo = () => useBazStore((state) => state.foo);
 export const useBar = () => useBazStore((state) => state.bar);
