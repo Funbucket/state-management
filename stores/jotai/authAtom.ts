@@ -12,7 +12,7 @@ const initialState: InitialStateType = {
 };
 
 const storage = createJSONStorage(() => localStorage);
-const authAtom = atomWithStorage<any>("jotai_auth", initialState, storage);
+const authAtom = atomWithStorage("jotai_auth", initialState, storage);
 const derivedAuthAtom = atom(
   (get) => get(authAtom),
   (get, set, token) =>
