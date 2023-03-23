@@ -11,14 +11,14 @@ const Bar = () => {
   });
 
   // CASE 1: 전체 store 구독
-  // const { bar, increaseBar } = useBazStore();
+  const { bar, increaseBar, initialize } = useBazStore();
 
   // CASE 2: selector 이용
-  const { bar, increaseBar, initialize } = useBazStore((state) => ({
-    bar: state.bar,
-    increaseBar: state.increaseBar,
-    initialize: state.initialize,
-  }));
+  // const { bar, increaseBar, initialize } = useBazStore((state) => ({
+  //   bar: state.bar,
+  //   increaseBar: state.increaseBar,
+  //   initialize: state.initialize,
+  // }));
 
   return (
     <HStack>
